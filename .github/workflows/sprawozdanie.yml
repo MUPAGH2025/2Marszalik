@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: sudo apt-get install texlive-xetex pandoc inkscape
-      - run: pip install scipy pint nbconvert open-atmos-jupyter-utils matplotlib
+      - run: pip install scipy pint nbconvert open-atmos-jupyter-utils matplotlib ipykernel
       - uses: actions/checkout@v4 
       - run: python -m nbconvert --to pdf --execute lab1.ipynb 
       - uses: actions/upload-artifact@v4
