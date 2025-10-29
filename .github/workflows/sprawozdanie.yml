@@ -4,4 +4,5 @@ jobs:
   pdf: 
     runs-on: ubuntu-22.04
     steps:
-      - run: sudo apt-get install textlive-xetex
+      - run: sudo apt-get install texlive-xetex
+      - run: pip install scipy pint open-atmos-jupyter-utils matplotlib
