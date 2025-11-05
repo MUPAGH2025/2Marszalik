@@ -10,4 +10,4 @@ jobs:
       - run: python -m nbconvert --to script --execute mpdata_2d_numpy_only(6).ipynb 
       - uses: actions/upload-artifact@v4
         with:
-          path: lab1.pdf
+          path: tmpme22sd6j.gif
