@@ -7,7 +7,7 @@ jobs:
       #- run: sudo apt-get install texlive-xetex pandoc inkscape
       - run: pip install scipy pint nbconvert open-atmos-jupyter-utils matplotlib ipykernel
       - uses: actions/checkout@v4 
-      - run: python -m nbconvert --to script --execute mpdata_2d_numpy_only(6).ipynb 
+      - run: python -m nbconvert --to script --execute 'mpdata_2d_numpy_only(6).ipynb' 
       - uses: actions/upload-artifact@v4
         with:
           path: tmpme22sd6j.gif
