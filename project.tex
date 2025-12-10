@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{anyfontsize}
+\usepackage{changepage}
+\usepackage[T1]{fontenc} 
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx, float}
+\usepackage{subcaption}
+\usepackage[margin = 1.5cm]{geometry}
+\usepackage{changepage}
+
+\title{%
+    Modelowanie układów przepływowych  \\
+    \large Jak kształt batymetrii "W" wpływa na przestrzenny rozkład
+    maksymalnych wysokości fali?}
+\author{Adam Marszalik}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Założenia oraz parametry symulacji}
+ Celem tego projektu jest zbadanie jak batymetria w kształcie litery "W" wpływa na maksymalne wychylenie propagującej się fali.
+ Równania płytkiej wody źle odwzoruwują ostre i strome krawędzie dlatego barymetrię wygładzono w sposób pokazany na poniższym rysunku.
+ 
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width=7cm]{./profil_batymetrii.pdf}
+  \caption{Kształ dna zbiornika wodnego wzdłuż propagującej się fali.  }
+  \label{fig:batymetria}
+\end{figure}
+
+Symulację wykonano na siatce o rozmiarze 40m na 170m, o kroku przestrzennym 1m. Krok czasowy wynosi 0.05sekundy, a całość symulacji jest ustawiona na 40 sekund. 
+Grawitację ustawiono na $10 \frac{m}{s^2}$.Fala powstaje wzdłuż osi X na Y = 0 metrów z słupa wody wynoszącego 0.075m i szerokości 4 metrów.
+Kluczowe w tym projekcie jest porównanie maksymalnej wysokości fali w miejscu pierwszego i drugiego wzniesiena na batymetrii.
+Zbadanie różnicy w wysokości w tych miejscach pozwoli na określenie czy taki kształt powoduje zmiejszenie amplitudy fali.
+
+
+
+\section{Wyniki symulacji}
+
+ 
+  
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{./maksymalne_wychylenie_bezwzgledne.pdf}
+    \caption{wykres}
+    \label{fig:sub2_1}
+    \end{subfigure}%
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\linewidth]{./mapa_maksymalnych_wychylen.pdf}
+    \caption{mapa}
+    \label{fig:sub2_2}
+  \end{subfigure}
+  \caption{Przestrzenny rozkład maksymalnych wysokości fali, wzdłuż  osi y dla x = 20 (a), mapa (b)}
+  \label{fig:rozkład_1}
+\end{figure}
+
+  
+  
+  Na powyższych rysunkach widać charakterystyczne wzniesienia. Fala na drugim wzniesieniu widocznie się zmiejszyła. 
+  Maksymalna wysokość na pierwszym wzniesieniu wynosi 0.050437 metrów, na drugim 0.040397 m. Różnica względla to 19.91\%.
+  Na rysunku 2.(b) widać zmiejszenie się wychylenia fali wychodzące z krańców siatki. Najprawdopodobniej wynikają one z błednego warunku począdkowego słupa wody.
+  W celu sprawdzenia poprawności przebiegu symulacji, wykonano mymulację o dwukrotnie zwiększonej rozdzielczości czasowej i przestrzennej. 
+  Krok przestrzenny ustawiono na 0.5 metra a krok czasowy na 0.025s. Wyniki znajdują się na rysunkach poniżej.
+  
+  
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{./maksymalne_wychylenie_podwojona_rozdzielczosc.pdf}
+      \caption{Wykres}
+      \label{fig:sub3_1}
+      \end{subfigure}%
+    \begin{subfigure}{0.5\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{./mapa_maksymalnych_wychylen_podwojona.pdf}
+      \caption{mapa}
+      \label{fig:sub3_2}
+    \end{subfigure}
+    \caption{Przestrzenny rozkład maksymalnych wysokości fali, wzdłuż  osi y dla x = 20 (a), mapa (b). Podwojona rozdzielczość czasowa i przestrzenna}
+    \label{fig:rozkład_2}
+  \end{figure}
+
+  Wykres 3.(a) jest gładszy niż 2.(a), na szczególną uwage zasługuje porównanie rozkład maksymalnego wychylenia do 50 metra. 
+  Widać że na wykresie 3.(a) maksymalne wychylenie rośnie, a na wykrsie 2.(a) maleje. 
+  Wynika to najprawdopodobniej z błędów numerycznych które inaczej oddziałują na równania w lepszej rozdzielczości.
+  Same wychylenia na wzniesieiach również uległy zmianie, na pierwszym wzniesieniu wynosi 0.064408 metrów, na drugim 0.058783 m. Różnica względla to 8.73\%.
+
+
+\section{Wioski}
+Maksymalne wychylenie fali zmiejsza się przy zadanej batymerii. Różnica względa wysokości może się zmiejszyć nawet o 19.91\%. 
+Podwojenie rozdzielczości symulacji wykazało zmianę tej różnicy do 8.73\%. Dzięki krztałcie dna pokazanym na rysunku 1, możliwe jest zmiejszenie zagrożenia przed falami. 
+W dalszych badaniach można sprawdzic wpływ wysokości wzniesień na rozkład wysokości fali.  
+
+
+
+\end{document}
