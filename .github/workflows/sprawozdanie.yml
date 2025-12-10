@@ -7,7 +7,7 @@ jobs:
       #- run: sudo apt-get install texlive-xetex pandoc inkscape
       - run: pip install scipy pint nbconvert open-atmos-jupyter-utils matplotlib ipykernel PyMPDATA
       - uses: actions/checkout@v4 
-      - run: sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+      - run: sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-lang-polish
       - run: python -m nbconvert --to script --execute 'projekt.ipynb' 
       - run: pdflatex -interaction=nonstopmode project.tex
       - uses: actions/upload-artifact@v4
